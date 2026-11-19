@@ -1,0 +1,234 @@
+.cinta-datos .dato, .testimonio, .miembro, .formulario-caja, .barra-lateral, .blog-entrada {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.seccion {
+  padding: 3rem 0;
+}
+.seccion.alterna {
+  background-color: #fff;
+}
+.seccion h2 {
+  color: #0D3B66;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+.seccion h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: #F4A300;
+  margin: 12px auto 0;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.galeria-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+.galeria-grid img:hover {
+  transform: scale(1.05) rotate(1deg);
+  filter: brightness(1.1);
+}
+@media (max-width: 992px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blog-entrada {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.blog-entrada img {
+  width: 260px;
+  object-fit: cover;
+}
+.blog-entrada .contenido {
+  padding: 16px;
+}
+.blog-entrada .contenido h4 {
+  margin-top: 0;
+  color: #0D3B66;
+}
+.blog-entrada:hover {
+  transform: translateY(-4px);
+}
+@media (max-width: 600px) {
+  .blog-entrada {
+    flex-direction: column;
+  }
+  .blog-entrada img {
+    width: 100%;
+    height: 190px;
+  }
+}
+
+.barra-lateral {
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.barra-lateral h5 {
+  color: #0D3B66;
+  border-bottom: 3px solid #F4A300;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+
+.etiqueta-primario {
+  display: inline-block;
+  margin: 2px;
+  padding: 3px 12px;
+  border-radius: 14px;
+  background-color: #0D3B66;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.etiqueta-acento {
+  display: inline-block;
+  margin: 2px;
+  padding: 3px 12px;
+  border-radius: 14px;
+  background-color: #F4A300;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.etiqueta-exito {
+  display: inline-block;
+  margin: 2px;
+  padding: 3px 12px;
+  border-radius: 14px;
+  background-color: #2E7D32;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.etiqueta-alerta {
+  display: inline-block;
+  margin: 2px;
+  padding: 3px 12px;
+  border-radius: 14px;
+  background-color: #C62828;
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.formulario-caja {
+  padding: 1.5rem;
+}
+
+.info-contacto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.info-contacto li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.info-contacto li i {
+  color: #F4A300;
+}
+
+.redes {
+  display: flex;
+  gap: 10px;
+}
+.redes a {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.4s ease;
+}
+.redes a:hover {
+  transform: rotate(360deg) scale(1.15);
+}
+.redes a img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.miembro {
+  text-align: center;
+  padding: 20px;
+}
+.miembro img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #F4A300;
+}
+.miembro h5 {
+  color: #0D3B66;
+  margin-bottom: 0;
+}
+.miembro:hover {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.testimonio {
+  padding: 20px;
+  height: 100%;
+}
+.testimonio i {
+  color: #F4A300;
+}
+
+.marquee-oferta {
+  background-color: #0D3B66;
+  color: #fff;
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+.tabla-wrap {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+}
+
+.cinta-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.cinta-datos .dato {
+  padding: 16px;
+  text-align: center;
+}
+.cinta-datos .dato i {
+  color: #F4A300;
+  font-size: 2.4rem;
+}
+
+.video-caja {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}

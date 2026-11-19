@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Registro de clientes y libro de reclamaciones de OK CONFORME.">
+<meta name="keywords" content="clientes, reclamos, registro">
+<meta name="author" content="Grupo 05">
+<title>Clientes y reclamos | OK CONFORME</title>
+<link rel="icon" type="image/svg+xml" href="imagenes/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/estilos-less.css">
+<link rel="stylesheet" href="css/estilos-sass.css">
+</head>
+<body>
+<ul id="drop-servicios" class="dropdown-content"><li><a href="acabados.html">Acabados</a></li><li><a href="adhesivos.html">Adhesivos</a></li><li><a href="selladores.html">Selladores</a></li><li><a href="cintas.html">Cintas</a></li><li><a href="ascensores.html">Ascensores</a></li><li><a href="elevadores.html">Elevadores</a></li></ul>
+<ul id="drop-contacto" class="dropdown-content"><li><a href="contacto.html">Contacto</a></li><li><a href="clientes.html">Clientes y reclamos</a></li></ul>
+<header>
+<div class="navbar-fixed">
+<nav class="navbar-azul" role="navigation">
+<div class="nav-wrapper container">
+<a href="index.html" class="brand-logo"><img src="imagenes/logo.svg" alt="Logo OK CONFORME"><span>OK CONFORME</span></a>
+<a href="#" data-target="menu-movil" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+<ul class="right hide-on-med-and-down">
+<li class=""><a href="index.html">Inicio</a></li><li class=""><a href="nosotros.html">Nosotros</a></li>
+<li class=""><a class="dropdown-trigger" href="#!" data-target="drop-servicios">Servicios<i class="material-icons right">arrow_drop_down</i></a></li>
+<li class=""><a href="proyectos.html">Proyectos</a></li><li class=""><a href="galeria.html">Galería</a></li><li class=""><a href="blog.html">Blog</a></li><li class=""><a href="productos.html">Productos</a></li>
+<li class="active"><a class="dropdown-trigger" href="#!" data-target="drop-contacto">Contacto<i class="material-icons right">arrow_drop_down</i></a></li>
+</ul>
+</div>
+</nav>
+</div>
+<ul class="sidenav" id="menu-movil"><li><a href="index.html">Inicio</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="acabados.html">Acabados</a></li><li><a href="adhesivos.html">Adhesivos</a></li><li><a href="selladores.html">Selladores</a></li><li><a href="cintas.html">Cintas</a></li><li><a href="ascensores.html">Ascensores</a></li><li><a href="elevadores.html">Elevadores</a></li><li><a href="proyectos.html">Proyectos</a></li><li><a href="galeria.html">Galería</a></li><li><a href="blog.html">Blog</a></li><li><a href="productos.html">Productos</a></li><li><a href="contacto.html">Contacto</a></li><li><a href="clientes.html">Clientes y reclamos</a></li></ul>
+</header>
+<main>
+<div class="parallax-container banner">
+<div class="banner-texto"><h1>Clientes y reclamos</h1><p>Tu opinión nos hace mejorar</p></div>
+<div class="parallax"><img src="imagenes/banner-contacto.jpg" alt="Clientes y reclamos"></div>
+</div>
+<section class="seccion"><div class="container"><div class="row"><ul class="tabs"><li class="tab col s6"><a class="active" href="#registro">Registro de clientes</a></li><li class="tab col s6"><a href="#reclamos">Reclamos</a></li></ul>
+<div id="registro" class="col s12"><form class="validar formulario-caja" data-mensaje="Cliente registrado correctamente." action="#" method="post"><h5>Registro de clientes</h5><div class="row">
+<div class="input-field col s12 m6"><input id="razon" type="text" required><label for="razon">Razón social o nombre</label></div>
+<div class="input-field col s12 m6"><input id="ruc" type="text" pattern="[0-9]{11}" maxlength="11" required><label for="ruc">RUC (11 dígitos)</label></div>
+<div class="input-field col s12 m6"><input id="rep" type="text" required><label for="rep">Persona de contacto</label></div>
+<div class="input-field col s12 m6"><input id="cmail" type="email" required><label for="cmail">Correo</label></div>
+<div class="input-field col s12 m6"><input id="ctel" type="tel" pattern="[0-9 +]{7,15}" required><label for="ctel">Teléfono</label></div>
+<div class="input-field col s12 m6"><input id="cdir" type="text"><label for="cdir">Dirección</label></div>
+<div class="col s12"><p>Tipo de cliente:</p><label><input name="tc" type="radio" checked><span>Constructora</span></label> &nbsp; <label><input name="tc" type="radio"><span>Inmobiliaria</span></label> &nbsp; <label><input name="tc" type="radio"><span>Persona natural</span></label></div>
+<div class="col s12"><p>Servicios de interés:</p><label><input type="checkbox"><span>Acabados</span></label> &nbsp; <label><input type="checkbox"><span>Adhesivos y selladores</span></label> &nbsp; <label><input type="checkbox"><span>Ascensores</span></label></div>
+<div class="col s12"><p>Recibir novedades:</p><div class="switch"><label>No<input type="checkbox" checked><span class="lever"></span>Sí</label></div></div>
+</div><button class="btn btn-naranja waves-effect" type="submit">Registrar<i class="material-icons right">how_to_reg</i></button></form></div><div id="reclamos" class="col s12"><form class="validar formulario-caja" data-mensaje="Reclamo registrado. Recibirás respuesta en 15 días." action="#" method="post"><h5>Libro de reclamaciones</h5><div class="row">
+<div class="input-field col s12 m6"><input id="rnom" type="text" required><label for="rnom">Nombre completo</label></div>
+<div class="input-field col s12 m6"><input id="rmail" type="email" required><label for="rmail">Correo</label></div>
+<div class="input-field col s12 m6"><input id="rped" type="text" required><label for="rped">N.° de pedido u orden</label></div>
+<div class="input-field col s12 m6"><input id="rfecha" type="date" required><label class="active" for="rfecha">Fecha del hecho</label></div>
+<div class="input-field col s12"><select id="rtipo"><option value="" disabled selected>Elige una opción</option><option>Reclamo (producto o servicio)</option><option>Queja (atención)</option></select><label>Tipo</label></div>
+<div class="input-field col s12"><textarea id="rdet" class="materialize-textarea" required minlength="15"></textarea><label for="rdet">Detalle</label></div>
+<div class="file-field input-field col s12"><div class="btn btn-naranja"><span>Adjuntar</span><input type="file"></div><div class="file-path-wrapper"><input class="file-path" type="text" placeholder="Evidencia (opcional)"></div></div>
+<div class="col s12"><label><input type="checkbox" required><span>Declaro que la información es verdadera</span></label></div>
+</div><button class="btn btn-naranja waves-effect" type="submit">Enviar reclamo<i class="material-icons right">report</i></button></form></div></div></div></section><section class="seccion alterna"><div class="container"><h2>Lo que dicen nuestros clientes</h2><div class="row"><div class="col s12 m4"><div class="testimonio"><i class="material-icons">format_quote</i><p>Entregaron el piso antes de la fecha y sin observaciones.</p><strong>Constructora Andina</strong></div></div><div class="col s12 m4"><div class="testimonio"><i class="material-icons">format_quote</i><p>El ascensor funciona sin fallas desde el primer día.</p><strong>Hotel Mirador</strong></div></div><div class="col s12 m4"><div class="testimonio"><i class="material-icons">format_quote</i><p>Excelente atención en el reclamo que presentamos.</p><strong>Inmobiliaria Sol</strong></div></div></div></div></section>
+</main>
+<div class="fixed-action-btn"><a class="btn-floating btn-large pulse tooltipped" data-position="left" data-tooltip="Cotiza aquí" href="contacto.html"><i class="large material-icons">chat</i></a></div>
+<footer class="page-footer">
+<div class="container">
+<div class="row">
+<div class="col s12 m4">
+<div class="pie-logo"><img src="imagenes/logo.svg" alt="Logo OK CONFORME"><h5 class="sin-margen">OK CONFORME</h5></div>
+<p class="grey-text text-lighten-3">Todo bien terminado. Acabados de construcción, adhesivos, selladores, cintas, ascensores y elevadores.</p>
+<div class="redes">
+<a class="tooltipped" data-tooltip="Facebook" href="https://www.facebook.com" target="_blank" rel="noopener"><img src="imagenes/red-facebook.svg" alt="Facebook"></a>
+<a class="tooltipped" data-tooltip="Instagram" href="https://www.instagram.com" target="_blank" rel="noopener"><img src="imagenes/red-instagram.svg" alt="Instagram"></a>
+<a class="tooltipped" data-tooltip="YouTube" href="https://www.youtube.com" target="_blank" rel="noopener"><img src="imagenes/red-youtube.svg" alt="YouTube"></a>
+<a class="tooltipped" data-tooltip="LinkedIn" href="https://www.linkedin.com" target="_blank" rel="noopener"><img src="imagenes/red-linkedin.svg" alt="LinkedIn"></a>
+</div>
+</div>
+<div class="col s6 m4">
+<h6>Enlaces</h6>
+<ul>
+<li><a class="grey-text text-lighten-3" href="index.html">Inicio</a></li>
+<li><a class="grey-text text-lighten-3" href="nosotros.html">Nosotros</a></li>
+<li><a class="grey-text text-lighten-3" href="proyectos.html">Proyectos</a></li>
+<li><a class="grey-text text-lighten-3" href="blog.html">Blog</a></li>
+<li><a class="grey-text text-lighten-3" href="productos.html">Productos</a></li>
+<li><a class="grey-text text-lighten-3" href="clientes.html">Reclamos</a></li>
+</ul>
+</div>
+<div class="col s6 m4">
+<h6>Contacto</h6>
+<ul class="grey-text text-lighten-3">
+<li>Av. Javier Prado Este 1234,<br>San Isidro, Lima</li>
+<li>Tel: <a href="tel:+5115550123">(01) 555-0123</a></li>
+<li><a href="mailto:contacto@okconforme.pe">contacto@okconforme.pe</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-copyright">
+<div class="container">
+&copy; 2026 OK CONFORME Construcciones &middot; Grupo 05
+<span class="right">Hecho con <a class="orange-text text-lighten-3" href="https://materializecss.com" target="_blank" rel="noopener">Materialize CSS</a></span>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
