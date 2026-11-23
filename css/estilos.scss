@@ -1,4 +1,3 @@
-// SASS: variables, mapas, mixins, funciones y herencia
 @use "sass:math";
 
 $azul: #0D3B66;
@@ -8,98 +7,228 @@ $colores: (primario: $azul, acento: $naranja, exito: #2E7D32, alerta: #C62828);
 $bp-movil: 600px;
 $bp-tablet: 992px;
 
-@function rem($px) { @return math.div($px, 16) * 1rem; }
+@function rem($px) {
+    @return math.div($px, 16) * 1rem;
+}
 
-@mixin flex-centro($dir: row) { display: flex; flex-direction: $dir; justify-content: center; align-items: center; }
+@mixin flex-centro($dir: row) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+}
 @mixin responsive($punto) {
-  @if $punto == movil { @media (max-width: $bp-movil) { @content; } }
-  @else if $punto == tablet { @media (max-width: $bp-tablet) { @content; } }
+    @if $punto == movil {
+        @media (max-width: $bp-movil) {
+            @content;
+        }
+    }
+    @else if $punto == tablet {
+        @media (max-width: $bp-tablet) {
+            @content;
+        }
+    }
 }
 
 %tarjeta-base {
-  background-color: #fff;
-  border-radius: $radio;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+    border-radius: $radio;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .seccion {
-  padding: rem(48) 0;
-  &.alterna { background-color: #fff; }
-  h2 {
-    color: $azul; text-align: center; margin: 0 0 rem(32);
-    &::after { content: ""; display: block; width: 70px; height: 4px; background-color: $naranja; margin: 12px auto 0; }
-  }
+    padding: rem(48) 0;
+    &.alterna {
+        background-color: #fff;
+    }
+    h2 {
+        color: $azul;
+        text-align: center;
+        margin: 0 0 rem(32);
+        &::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: $naranja;
+            margin: 12px auto 0;
+        }
+    }
 }
 
 .galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  img {
-    width: 100%; height: 220px; object-fit: cover; border-radius: 8px;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    &:hover { transform: scale(1.05) rotate(1deg); filter: brightness(1.1); }
-  }
-  @include responsive(tablet) { grid-template-columns: repeat(2, 1fr); }
-  @include responsive(movil) { grid-template-columns: 1fr; }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: transform 0.4s ease, filter 0.4s ease;
+        &:hover {
+            transform: scale(1.05) rotate(1deg);
+            filter: brightness(1.1);
+        }
+    }
+    @include responsive(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include responsive(movil) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .blog-entrada {
-  @extend %tarjeta-base;
-  display: flex; gap: 16px; margin-bottom: 20px; overflow: hidden;
-  img { width: 260px; object-fit: cover; }
-  .contenido { padding: 16px; h4 { margin-top: 0; color: $azul; } }
-  &:hover { transform: translateY(-4px); }
-  @include responsive(movil) { flex-direction: column; img { width: 100%; height: 190px; } }
+    @extend %tarjeta-base;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    img {
+        width: 260px;
+        object-fit: cover;
+    }
+    .contenido {
+        padding: 16px;
+        h4 {
+            margin-top: 0;
+            color: $azul;
+        }
+    }
+    &:hover {
+        transform: translateY(-4px);
+    }
+    @include responsive(movil) {
+        flex-direction: column;
+        img {
+            width: 100%;
+            height: 190px;
+        }
+    }
 }
 
 .barra-lateral {
-  @extend %tarjeta-base;
-  padding: 16px; margin-bottom: 20px;
-  h5 { color: $azul; border-bottom: 3px solid $naranja; padding-bottom: 6px; margin-top: 0; }
+    @extend %tarjeta-base;
+    padding: 16px;
+    margin-bottom: 20px;
+    h5 {
+        color: $azul;
+        border-bottom: 3px solid $naranja;
+        padding-bottom: 6px;
+        margin-top: 0;
+    }
 }
 
 @each $nombre, $color in $colores {
-  .etiqueta-#{$nombre} {
-    display: inline-block; margin: 2px; padding: 3px 12px; border-radius: 14px;
-    background-color: $color; color: #fff; font-size: 0.8rem;
-  }
+    .etiqueta-#{$nombre} {
+        display: inline-block;
+        margin: 2px;
+        padding: 3px 12px;
+        border-radius: 14px;
+        background-color: $color;
+        color: #fff;
+        font-size: 0.8rem;
+    }
 }
 
-.formulario-caja { @extend %tarjeta-base; padding: rem(24); }
+.formulario-caja {
+    @extend %tarjeta-base;
+    padding: rem(24);
+}
 
 .info-contacto {
-  list-style: none; padding: 0; margin: 0;
-  display: flex; flex-direction: column; gap: 14px;
-  li { display: flex; align-items: center; gap: 12px; i { color: $naranja; } }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        i {
+            color: $naranja;
+        }
+    }
 }
 
 .redes {
-  display: flex; gap: 10px;
-  a {
-    width: 40px; height: 40px; transition: transform 0.4s ease;
-    &:hover { transform: rotate(360deg) scale(1.15); }
-    img { width: 100%; height: 100%; display: block; }
-  }
+    display: flex;
+    gap: 10px;
+    a {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.4s ease;
+        &:hover {
+            transform: rotate(360deg) scale(1.15);
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
 }
 
 .miembro {
-  @extend %tarjeta-base;
-  text-align: center; padding: 20px;
-  img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 4px solid $naranja; }
-  h5 { color: $azul; margin-bottom: 0; }
-  &:hover { transform: translateY(-6px) scale(1.03); }
+    @extend %tarjeta-base;
+    text-align: center;
+    padding: 20px;
+    img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid $naranja;
+    }
+    h5 {
+        color: $azul;
+        margin-bottom: 0;
+    }
+    &:hover {
+        transform: translateY(-6px) scale(1.03);
+    }
 }
 
-.testimonio { @extend %tarjeta-base; padding: 20px; height: 100%; i { color: $naranja; } }
+.testimonio {
+    @extend %tarjeta-base;
+    padding: 20px;
+    height: 100%;
+    i {
+        color: $naranja;
+    }
+}
 
-.marquee-oferta { background-color: $azul; color: #fff; padding: 8px 0; font-weight: 500; }
-.tabla-wrap { overflow-x: auto; margin-bottom: rem(32); }
+.marquee-oferta {
+    background-color: $azul;
+    color: #fff;
+    padding: 8px 0;
+    font-weight: 500;
+}
+.tabla-wrap {
+    overflow-x: auto;
+    margin-bottom: rem(32);
+}
 
 .cinta-datos {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
-  .dato { @extend %tarjeta-base; padding: 16px; text-align: center; i { color: $naranja; font-size: 2.4rem; } }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    .dato {
+        @extend %tarjeta-base;
+        padding: 16px;
+        text-align: center;
+        i {
+            color: $naranja;
+            font-size: 2.4rem;
+        }
+    }
 }
 
-.video-caja { @include flex-centro(column); gap: 8px; }
+.video-caja {
+    @include flex-centro(column);
+    gap: 8px;
+}
